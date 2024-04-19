@@ -1,7 +1,7 @@
 package Model;
 import Resource.UserDTO;
 import Util.Connections;
-import com.mysql.cj.protocol.ProtocolEntityReader;
+import View.User_View;
 
 import java.sql.*;
 import java.sql.SQLException;
@@ -29,8 +29,8 @@ public class UserDAO
         }
         catch (SQLException e)
         {
-            System.out.println("Error Model");
-            System.out.println(e.getMessage());
+
+            User_View.emessage(e);
             return false;
         }
     }
@@ -51,8 +51,7 @@ public class UserDAO
         }
         catch (SQLException e)
         {
-            System.out.println("Error Model");
-            System.out.println(e.getMessage());
+            User_View.emessage(e);
             return false;
         }
     }
@@ -77,8 +76,7 @@ public class UserDAO
         }
         catch (SQLException e)
         {
-            System.out.println("DB AE");
-            System.out.println(e.getMessage());
+            User_View.emessage(e);
         }
         return true;
     }
@@ -100,7 +98,7 @@ public class UserDAO
         }
         catch (SQLException e)
         {
-            System.out.println(e.getMessage());
+            User_View.emessage(e);
         }
         return false;
     }
@@ -133,7 +131,7 @@ public class UserDAO
         }
         catch (SQLException e)
         {
-            System.out.println(e.getMessage());
+            User_View.emessage(e);
         }
         return list;
     }
@@ -167,7 +165,7 @@ public class UserDAO
         }
         catch (SQLException e)
         {
-            System.out.println(e.getMessage());
+            User_View.emessage(e);
         }
         return list;
     }
@@ -201,7 +199,7 @@ public class UserDAO
         }
         catch (SQLException e)
         {
-            System.out.println(e.getMessage());
+            User_View.emessage(e);
         }
         return list;
     }
@@ -227,7 +225,7 @@ public class UserDAO
         }
         catch (SQLException e)
         {
-            System.out.println(e.getMessage());
+            User_View.emessage(e);
         }
         return true;
     }
@@ -250,7 +248,7 @@ public class UserDAO
         }
         catch (SQLException e)
         {
-            System.out.println(e.getMessage());
+            User_View.emessage(e);
         }
         return true;
     }
@@ -272,7 +270,7 @@ public class UserDAO
         }
         catch (SQLException e)
         {
-            System.out.println(e.getMessage());
+            User_View.emessage(e);
         }
         return false;
     }

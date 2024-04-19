@@ -1,5 +1,4 @@
 package Controller;
-import javax.swing.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -7,11 +6,7 @@ public class Validationcontroller
 {
     public static boolean verify(String email)
     {
-        if(email.contains("@gmail.com"))
-        {
-            return true;
-        }
-        return false;
+        return email.contains("@gmail.com");
     }
     public static boolean verifyPassword(String pass)
     {
@@ -29,11 +24,7 @@ public class Validationcontroller
                 sym = 1;
             }
         }
-        if(low==1 && up==1 && dig==1 && sym==1)
-        {
-            return true;
-        }
-      return false;
+        return low == 1 && up == 1 && dig == 1 && sym == 1;
     }
     public static boolean verifyPhone(String phone)
     {
@@ -52,14 +43,7 @@ public class Validationcontroller
                 }
             }
         }
-        if(count!=10)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+        return count == 10;
     }
     public static boolean verifyDate(String date)
     {

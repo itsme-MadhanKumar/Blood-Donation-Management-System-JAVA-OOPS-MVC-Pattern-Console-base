@@ -3,6 +3,7 @@ import Controller.Validationcontroller;
 import Resource.UserDTO;
 import Util.Input;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class User_View
@@ -186,22 +187,7 @@ public class User_View
         System.out.printf(
                 "------------------------------------------------------------------------------------------------------------------------%n");
     }
-    public static String getUserBloodLocation()
-    {
-        Input.getStringLine();
-        System.out.println("Enter Location you Need Blood : ");
-        return Input.getStringLine();
-    }
-    public static void Display_Kindlywait()
-    {
-        System.out.println("This Process May take up to 10 Seconds Kindly wait");
-    }
-    public static String getOtp()
-    {
-        Input.getStringLine();
-        System.out.println("Enter your OTP : ");
-        return Input.getString();
-    }
+
     public static void displayBloodEnter()
     {
         System.out.println(" ".repeat(45)+"Enter your Blood Type Sported by Serial Number");
@@ -227,5 +213,58 @@ public class User_View
         System.out.print("Enter Mail id to Send : ");
         Input.getStringLine();
         return Input.getString();
+    }
+    public static void displayErrorValidation()
+    {
+        System.out.println("Invalid Mail and Passwords");
+    }
+    public static void displayUserAlready()
+    {
+        System.out.println("User Already Exists");
+    }
+    public static void displaySuccess()
+    {
+        System.out.println("Account Created Successful Now you click Sign in #1");
+    }
+    public static void displaywentwrong()
+    {
+        System.out.println("Something went Wrong");
+    }
+    public static void displaysuccess1()
+    {
+        System.out.println("No Recent Blood Donate ✅");
+        System.out.println("Account Created Successful Now you click Sign in #1");
+    }
+    public static void displayWish()
+    {
+        System.out.println("Thank you🤩");
+    }
+    public static void displayNoDonor()
+    {
+        System.out.println("No Blood Donor Found");
+    }
+    public static void Inseted()
+    {
+        System.out.println("Inserted Successfull");
+    }
+    public static void notInserted()
+    {
+        System.out.println("Not Inserted");
+    }
+    public static void newLocation()
+    {
+        System.out.println("New Location Set Up is Done");
+    }
+    public static void msgsent()
+    {
+        System.out.println("Message sent");
+    }
+    public static void notfound()
+    {
+        System.out.println("Mail id Not Found in Database");
+    }
+    public static void emessage(SQLException e)
+    {
+        System.out.println(e.getMessage());
     }
 }

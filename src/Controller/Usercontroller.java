@@ -19,7 +19,7 @@ public class Usercontroller
                 ArrayList<ArrayList<String>> list = UserDAO.getBloodDonar(bloodtype,obj.getMailid());
                 if(list.isEmpty())
                 {
-                    System.out.println("No Blood Donor Found");
+                    User_View.displayNoDonor();
                 }
                 else
                 {
@@ -35,7 +35,7 @@ public class Usercontroller
                 ArrayList<ArrayList<String>> list = UserDAO.getBloodDonarByDistrict(blood_type,district,obj.getMailid());
                 if(list.isEmpty())
                 {
-                    System.out.println("No Blood Donor Found");
+                   User_View.displayNoDonor();
                 }
                 else
                 {
@@ -47,12 +47,12 @@ public class Usercontroller
                 //View by Donor Recent Blood Donate Location
                 User_View.displayBloodEnter();
                 String blood_type = Sign_Page.getBloodType();
-                System.out.println(" ".repeat(45)+"Enter District that Donor May Donated in Your Location");
+              //  System.out.println(" ".repeat(45)+"Enter District that Donor May Donated in Your Location");
                 String district = Sign_Page.getDistrict();
                 ArrayList<ArrayList<String>> list = UserDAO.getBloodDonarByRecent(blood_type,district,obj.getMailid());
                 if(list.isEmpty())
                 {
-                    System.out.println("No Blood Donor Found By Recent by Your Location");
+                   User_View.displayNoDonor();
                 }
                 else
                 {
@@ -73,19 +73,19 @@ public class Usercontroller
                     boolean flag = UserDAO.updaterecentLocation(obj);
                     if(flag)
                     {
-                        System.out.println("Inserted Successfull");
+                       User_View.Inseted();
                         System.out.println("Email : "+obj.getMailid());
                     }
                     else
                     {
-                        System.out.println("Not Inserted");
+                      User_View.notInserted();
                     }
                 }
                 else
                 {
                     obj.setMailid(email1);
                     obj.setPassword(password1);
-                    System.out.println("Mail Id and Password is Wrong");
+                  User_View.displayErrorValidation();
                 }
 
             }
@@ -104,18 +104,14 @@ public class Usercontroller
                     boolean flag2 = UserDAO.updatingnewLocation(new_location,obj);
                     if(flag2)
                     {
-                        System.out.println("New Location Set Up is Done");
-                    }
-                    else
-                    {
-                        System.out.println("Not Done new location is set");
+                       User_View.newLocation();
                     }
                 }
                 else
                 {
                     obj.setMailid(email1);
                     obj.setPassword(password1);
-                    System.out.println("Mail Id and Password is Wrong");
+                    User_View.displayErrorValidation();
                 }
             }
             else if(num==6)
@@ -128,16 +124,13 @@ public class Usercontroller
                     boolean flag = EmailDAO.sendEmail(obj,msg,emailid);
                     if(flag)
                     {
-                        System.out.println("msg sent");
+                      User_View.msgsent();
                     }
-                    else
-                    {
-                        System.out.println("msg not sent");
-                    }
+
                 }
                 else
                 {
-                    System.out.println("Mail id Not Found in Database");
+                    User_View.notfound();
                 }
             }
             else if(num==7)

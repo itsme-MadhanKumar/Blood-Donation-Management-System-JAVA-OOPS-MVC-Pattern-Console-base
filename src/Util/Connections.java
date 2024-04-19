@@ -11,7 +11,7 @@ public class Connections
     {
         if(conn==null)
         {
-            return conn  = (Connection) DriverManager.getConnection(URL,USER,PSW);
+            return conn  = DriverManager.getConnection(URL,USER,PSW);
         }
         return conn;
     }

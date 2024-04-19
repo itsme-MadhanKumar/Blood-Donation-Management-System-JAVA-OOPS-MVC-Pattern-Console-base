@@ -4,10 +4,9 @@ import Resource.UserDTO;
 import View.Sign_Page;
 import View.User_View;
 import View.Welcome_Page;
-import java.sql.SQLException;
 public class maincontroller
 {
-    public static void start() throws SQLException
+    public static void start()
     {
         while (true)
         {
@@ -19,7 +18,6 @@ public class maincontroller
                 boolean flag = Accesscontroller.signin(obj);
                 if(flag)
                 {
-                    System.out.println("Done in");
                     Usercontroller.user_start(obj);
                 }
             }
@@ -41,13 +39,13 @@ public class maincontroller
                             // remove
                             if (flag2 && flag1)
                             {
-                                System.out.println("Account Created Successful Now you click Sign in #1");
+                               User_View.displaySuccess();
                             }
 
                         }
                         else
                         {
-                            System.out.println("Something went Wrong");
+                          User_View.displaywentwrong();
                         }
                     }
                     else
@@ -59,20 +57,19 @@ public class maincontroller
                             boolean flag2 = UserDAO.insertrecentStatus(Main_obj);
                             if(flag2 && flag1)
                             {
-                                System.out.println("No Recent Blood Donate ✅");
-                                System.out.println("Account Created Successful Now you click Sign in #1");
+                               User_View.displaysuccess1();
                             }
                         }
                         else
                         {
-                            System.out.println("Something went Wrong");
+                           User_View.displaywentwrong();
                         }
                     }
                 }
             }
             else
             {
-                System.out.println("Thank you ");
+              User_View.displayWish();
                 System.exit(0);
             }
         }

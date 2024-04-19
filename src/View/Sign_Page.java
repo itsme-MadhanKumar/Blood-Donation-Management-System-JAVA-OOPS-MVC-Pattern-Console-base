@@ -164,7 +164,7 @@ public class Sign_Page
         String email = obj.getRun_email();
         obj.getStatus(email,date,location,time);
     }
-    public static UserDTO  firstLogin1(UserDTO obj)
+    public static void firstLogin1(UserDTO obj)
     {
         Input.getStringLine();
         System.out.println(" ".repeat(45)+"--Kindly Update Recent Donate Status--");
@@ -176,6 +176,5 @@ public class Sign_Page
         String time = Input.getStringLine();
         String email = obj.getMailid();
         obj.getStatus(email,date,location,time);
-        return obj;
     }
 }

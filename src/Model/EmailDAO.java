@@ -1,6 +1,7 @@
 package Model;
 
 import Resource.UserDTO;
+import View.User_View;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -35,12 +36,12 @@ public class EmailDAO
             message.setSubject("From, \n "+obj.getMailid());
             message.setText(msg);
             Transport.send(message);
-            System.out.println("Mail Sending is Done ✅");
+            User_View.msgsent();
             return true;
         }
         catch (MessagingException mex)
         {
-            System.out.println(mex.getMessage()+", Mail id Not found");
+            User_View.notfound();
             return false;
         }
     }
